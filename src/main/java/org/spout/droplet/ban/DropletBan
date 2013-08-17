@@ -1,0 +1,29 @@
+package org.spout.droplet.ban;
+
+import java.util.logging.Level;
+
+public class DropletBan extends Plugin {
+
+ @Override
+    public void onEnable(){
+        System.out.print("DropletBan!");
+        getServer().getPluginManager().registerEvents(this, this);
+    }
+    
+    @Override
+    public void onDisable(){
+       
+    }
+    
+    	@Command(aliases = { "sban", "spban" }, desc = "Ban a player!")
+public void ban(CommandContext args, CommandSource source) throws CommandException {
+                  if (args.length == 0) {
+           	throw new CommandException("Invalid usage!");
+	           return true;
+              }
+              Player player = player.getServer().getPlayer(args[0]);
+              if (player == null) {
+           	throw new CommandException("Could not find player!");
+                      return true;
+              }
+              player.setBanned(true);
