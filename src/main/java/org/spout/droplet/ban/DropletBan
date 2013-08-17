@@ -1,4 +1,4 @@
-package org.spout.droplet.ban;
+package main.java.org.spout.droplet.ban;
 
 import java.util.logging.Level;
 
